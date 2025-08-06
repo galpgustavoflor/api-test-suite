@@ -476,7 +476,7 @@ class TestGenerator:
                 elif max_length:
                     return 'x' * (max_length + 10)  # Exceed maximum length
                 else:
-                    return None  # Null value
+                    return 'invalid_string'  # Use a clearly invalid string instead of None
     
     def _generate_headers(self, operation: Dict[str, Any]) -> Dict[str, str]:
         """Generate appropriate headers for the request."""
