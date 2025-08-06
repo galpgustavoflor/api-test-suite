@@ -254,14 +254,15 @@ def test_example_files_exist():
     """Test that example files exist and are valid."""
     examples_dir = Path("examples")
     
-    # Test YAML file
-    yaml_file = examples_dir / "petstore-api.yaml"
-    assert yaml_file.exists()
+    # Test YAML file(s)
+    yaml_files = list(examples_dir.glob("*.yaml")) + list(examples_dir.glob("*.yml"))
+    assert len(yaml_files) > 0, "No YAML files found in examples directory"
     
-    with open(yaml_file, 'r', encoding='utf-8') as f:
-        yaml_content = yaml.safe_load(f)
-    assert "openapi" in yaml_content
-    assert "paths" in yaml_content
+    for yaml_file in yaml_files:
+        with open(yaml_file, 'r', encoding='utf-8') as f:
+            yaml_content = yaml.safe_load(f)
+        assert "openapi" in yaml_content
+        assert "paths" in yaml_content
     
     # Test JSON file
     json_file = examples_dir / "user-management-api.json"
