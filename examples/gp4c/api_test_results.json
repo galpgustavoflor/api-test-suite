@@ -1,0 +1,2934 @@
+{
+  "summary": {
+    "total_tests": 55,
+    "passed": 32,
+    "failed": 23,
+    "success_rate": 58.18181818181818,
+    "error_rate": 41.81818181818181,
+    "avg_response_time": 1686.31,
+    "median_response_time": 1718.14,
+    "min_response_time": 951.34,
+    "max_response_time": 2671.9,
+    "percentile_95": 2560.35,
+    "percentile_99": 0.0
+  },
+  "performance_data": [
+    {
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1414.42,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487725.7464576
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1712.12,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487725.7397223
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1785.87,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487725.7358806
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1817.34,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487725.7510786
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1718.14,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487727.5279436
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 2569.38,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487727.1906579
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 2558.09,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487727.4558787
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 2671.9,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487727.68155
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1339.02,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487729.7620094
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1772.45,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487729.5115423
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1791.0,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487730.0638616
+    },
+    {
+      "test_name": "GET /aug-gp4c-metering-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1891.49,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487730.3769822
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1662.0,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487731.4115918
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1985.15,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487731.1184745
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1484.31,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487731.9936895
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 2101.75,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487732.2761602
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1533.13,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487733.105549
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1547.91,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487733.0758052
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1722.24,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487733.646089
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1808.4,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487734.4214761
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1787.92,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487734.8063607
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1817.18,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487734.7927616
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 2309.72,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487735.4124544
+    },
+    {
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1880.86,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487736.2524252
+    },
+    {
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1845.19,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487736.632141
+    },
+    {
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1882.22,
+      "status_code": 400,
+      "success": true,
+      "test_type": "invalid",
+      "timestamp": 1754487736.6550567
+    },
+    {
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1922.02,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487737.724704
+    },
+    {
+      "test_name": "GET /aug-gp4c-energy-prices - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1555.4,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487738.5436828
+    },
+    {
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1576.24,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487738.521712
+    },
+    {
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1755.68,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487738.2851734
+    },
+    {
+      "test_name": "GET /aug-gp4c-energy-prices - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1369.06,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487739.6488
+    },
+    {
+      "test_name": "GET /aug-gp4c-energy-prices - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1663.52,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487740.101075
+    },
+    {
+      "test_name": "GET /aug-gp4c-energy-prices - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1622.69,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487740.2573984
+    },
+    {
+      "test_name": "GET /aug-gp4c-market-final-positions - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1918.64,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487740.2586308
+    },
+    {
+      "test_name": "GET /aug-gp4c-market-final-positions - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1060.96,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487741.3263254
+    },
+    {
+      "test_name": "GET /aug-gp4c-market-final-positions - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1189.04,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487741.8841405
+    },
+    {
+      "test_name": "GET /aug-gp4c-market-final-positions - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1349.44,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487741.766273
+    },
+    {
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1916.05,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487742.2080002
+    },
+    {
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1800.28,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487742.4673638
+    },
+    {
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1393.65,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487743.0910969
+    },
+    {
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1497.56,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487743.121859
+    },
+    {
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 951.34,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487744.1258368
+    },
+    {
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1363.22,
+      "status_code": 400,
+      "success": false,
+      "test_type": "edge_case",
+      "timestamp": 1754487744.2700884
+    },
+    {
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1163.01,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487744.486831
+    },
+    {
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1800.36,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487744.6213212
+    },
+    {
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1601.59,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487745.0788982
+    },
+    {
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1236.86,
+      "status_code": 400,
+      "success": true,
+      "test_type": "invalid",
+      "timestamp": 1754487745.7460759
+    },
+    {
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1365.97,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487745.8161771
+    },
+    {
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1169.14,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487746.4268606
+    },
+    {
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1991.77,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487746.70466
+    },
+    {
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1524.81,
+      "status_code": 400,
+      "success": true,
+      "test_type": "invalid",
+      "timestamp": 1754487747.1838434
+    },
+    {
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1754.8,
+      "status_code": 400,
+      "success": false,
+      "test_type": "valid",
+      "timestamp": 1754487746.99655
+    },
+    {
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1985.39,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487747.766863
+    },
+    {
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1329.51,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487748.7005434
+    },
+    {
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "response_time": 1509.95,
+      "status_code": 400,
+      "success": true,
+      "test_type": "edge_case",
+      "timestamp": 1754487748.7145028
+    }
+  ],
+  "status_codes": {
+    "400": 55
+  },
+  "test_types": {
+    "edge_case": {
+      "total": 39,
+      "passed": 29,
+      "failed": 10,
+      "success_rate": 74.35897435897436,
+      "avg_response_time": 1668.78
+    },
+    "valid": {
+      "total": 13,
+      "passed": 0,
+      "failed": 13,
+      "success_rate": 0.0,
+      "avg_response_time": 1770.84
+    },
+    "invalid": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_response_time": 1547.96
+    }
+  },
+  "endpoint_analysis": {
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1682.44,
+      "min_response_time": 1414.42,
+      "max_response_time": 1817.34
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 2379.38,
+      "min_response_time": 1718.14,
+      "max_response_time": 2671.9
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1698.49,
+      "min_response_time": 1339.02,
+      "max_response_time": 1891.49
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1808.3,
+      "min_response_time": 1484.31,
+      "max_response_time": 2101.75
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1652.92,
+      "min_response_time": 1533.13,
+      "max_response_time": 1808.4
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1948.92,
+      "min_response_time": 1787.92,
+      "max_response_time": 2309.72
+    },
+    "POST https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1,
+      "success_rate": 80.0,
+      "avg_response_time": 1796.27,
+      "min_response_time": 1576.24,
+      "max_response_time": 1922.02
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1552.67,
+      "min_response_time": 1369.06,
+      "max_response_time": 1663.52
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1379.52,
+      "min_response_time": 1060.96,
+      "max_response_time": 1918.64
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1651.88,
+      "min_response_time": 1393.65,
+      "max_response_time": 1916.05
+    },
+    "GET https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 50.0,
+      "avg_response_time": 1319.48,
+      "min_response_time": 951.34,
+      "max_response_time": 1800.36
+    },
+    "POST https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1,
+      "success_rate": 80.0,
+      "avg_response_time": 1473.07,
+      "min_response_time": 1169.14,
+      "max_response_time": 1991.77
+    },
+    "POST https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1,
+      "success_rate": 80.0,
+      "avg_response_time": 1620.89,
+      "min_response_time": 1329.51,
+      "max_response_time": 1985.39
+    }
+  },
+  "error_analysis": {
+    "error_details": [
+      {
+        "test_name": "GET /aug-gp4c-metering-per-group-type - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-metering-per-group-type - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-metering-per-location-b2c - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-metering-per-location-b2c - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-metering-per-id - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-metering-per-id - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-character-per-id - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-supply-character-per-id - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Valid Test 1",
+        "method": "POST",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-energy-prices - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-energy-prices - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-market-final-positions - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-market-final-positions - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Valid Test 1",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Empty Request Body",
+        "method": "GET",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "edge_case",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Valid Test 1",
+        "method": "POST",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      },
+      {
+        "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Valid Test 1",
+        "method": "POST",
+        "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+        "status_code": 400,
+        "error": null,
+        "test_type": "valid",
+        "response_body": "Bad Request"
+      }
+    ],
+    "error_types": {
+      "Client Error (4xx)": 23
+    },
+    "total_errors": 23
+  },
+  "passed_tests": [
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-group-type - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1414.42,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-group-type - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1817.34,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-location-b2c - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1718.14,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-location-b2c - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 2671.9,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-id - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1791.0,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-id - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1891.49,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-per-type - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1484.31,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-per-type - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 2101.75,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-with-metering - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1722.24,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-with-metering - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1808.4,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-character-per-id - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 2309.72,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-character-per-id - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1880.86,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-supply-character-per-id-post - Invalid Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1882.22,
+      "Test Type": "invalid"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-supply-character-per-id-post - Empty Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1922.02,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-supply-character-per-id-post - Special Characters",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1576.24,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-supply-character-per-id-post - Large Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1755.68,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-energy-prices - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1663.52,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-energy-prices - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1622.69,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-market-final-positions - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1189.04,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-market-final-positions - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1349.44,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1393.65,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1497.56,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-model-client-forecast-per-id - Large Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1163.01,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-model-client-forecast-per-id - Special Characters",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1800.36,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Invalid Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1236.86,
+      "Test Type": "invalid"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Empty Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1365.97,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Large Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1169.14,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Special Characters",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1991.77,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-bidding-per-group-type-post - Invalid Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1524.81,
+      "Test Type": "invalid"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-bidding-per-group-type-post - Empty Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1985.39,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-bidding-per-group-type-post - Large Request Body",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1329.51,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-bidding-per-group-type-post - Special Characters",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1509.95,
+      "Test Type": "edge_case"
+    }
+  ],
+  "failed_tests": [
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-group-type - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1712.12,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-group-type - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1785.87,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-location-b2c - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 2569.38,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-location-b2c - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 2558.09,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-id - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1339.02,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-metering-per-id - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1772.45,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-per-type - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1662.0,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-per-type - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1985.15,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-with-metering - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1533.13,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-instal-id-with-metering - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1547.91,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-character-per-id - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1787.92,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-supply-character-per-id - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1817.18,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-supply-character-per-id-post - Valid Test 1",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1845.19,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-energy-prices - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1555.4,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-energy-prices - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1369.06,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-market-final-positions - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1918.64,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-market-final-positions - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1060.96,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1916.05,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1800.28,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-model-client-forecast-per-id - Valid Test 1",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 951.34,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "GET /aug-gp4c-model-client-forecast-per-id - Empty Request Body",
+      "Method": "GET",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1363.22,
+      "Error": null,
+      "Test Type": "edge_case"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Valid Test 1",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1601.59,
+      "Error": null,
+      "Test Type": "valid"
+    },
+    {
+      "Test Name": "POST /rfn-gp4c-bidding-per-group-type-post - Valid Test 1",
+      "Method": "POST",
+      "URL": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "Status Code": 400,
+      "Response Time (ms)": 1754.8,
+      "Error": null,
+      "Test Type": "valid"
+    }
+  ],
+  "raw_data": [
+    {
+      "test_id": "9b37322a-0b4f-4187-91e8-3cc00e1a3c9c",
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1414.42,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:07 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487725.7464576
+    },
+    {
+      "test_id": "ba5653d9-bc2a-4c3b-991e-80e76ca5cb49",
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1712.12,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:07 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487725.7397223
+    },
+    {
+      "test_id": "27e7b35b-62e6-4b16-b9ed-e3af33ee8c9d",
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1785.87,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:07 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Metering Data"
+      ],
+      "timestamp": 1754487725.7358806
+    },
+    {
+      "test_id": "f10d83a4-edca-4ee5-a03e-6371d84c01a3",
+      "test_name": "GET /aug-gp4c-metering-per-group-type - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1817.34,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:07 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487725.7510786
+    },
+    {
+      "test_id": "6bc680de-7985-4de8-9af2-13264105e4bf",
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1718.14,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:09 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487727.5279436
+    },
+    {
+      "test_id": "49126d1c-06db-4b12-a1cd-6bfc2aea7655",
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 2569.38,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:10 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Metering Data"
+      ],
+      "timestamp": 1754487727.1906579
+    },
+    {
+      "test_id": "c104cd6c-52e2-4da8-ba6e-8225ef494698",
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 2558.09,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:10 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487727.4558787
+    },
+    {
+      "test_id": "5c31dfca-ba08-47fe-959e-abfdd53b44d3",
+      "test_name": "GET /aug-gp4c-metering-per-location-b2c - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 2671.9,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:10 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487727.68155
+    },
+    {
+      "test_id": "97009427-ced1-4fe7-aa0e-e3688e06d631",
+      "test_name": "GET /aug-gp4c-metering-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1339.02,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:11 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487729.7620094
+    },
+    {
+      "test_id": "aacc5d97-38bb-4216-8d49-8ca67e8915f8",
+      "test_name": "GET /aug-gp4c-metering-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1772.45,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:11 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Metering Data"
+      ],
+      "timestamp": 1754487729.5115423
+    },
+    {
+      "test_id": "a69e27cc-705d-4a9e-9414-bea1eaf2793f",
+      "test_name": "GET /aug-gp4c-metering-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1791.0,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:12 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487730.0638616
+    },
+    {
+      "test_id": "e6e820d4-0bca-49de-9192-007ff2a574a9",
+      "test_name": "GET /aug-gp4c-metering-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1891.49,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:12 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Metering Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487730.3769822
+    },
+    {
+      "test_id": "72718d64-cfab-434e-bb5c-8ae5e504e920",
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1662.0,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:13 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487731.4115918
+    },
+    {
+      "test_id": "0f94e721-6e9a-4898-a1e1-2de17901e91d",
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1985.15,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:13 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Supply Data"
+      ],
+      "timestamp": 1754487731.1184745
+    },
+    {
+      "test_id": "4dbbe998-3acd-4780-b880-111bf238c723",
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1484.31,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:13 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487731.9936895
+    },
+    {
+      "test_id": "b918c073-036f-4f80-ae65-c1ef3368e1d3",
+      "test_name": "GET /aug-gp4c-supply-instal-id-per-type - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 2101.75,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:14 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487732.2761602
+    },
+    {
+      "test_id": "8cde2b11-3bc4-46e4-9c37-07eb431b2304",
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1533.13,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:14 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487733.105549
+    },
+    {
+      "test_id": "42ae1046-4936-4358-a7f8-34cd8e3dfc4f",
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1547.91,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:14 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Supply Data"
+      ],
+      "timestamp": 1754487733.0758052
+    },
+    {
+      "test_id": "173fb3c4-b99a-47ca-b907-64bbbd19617d",
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1722.24,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:15 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487733.646089
+    },
+    {
+      "test_id": "483bf3c7-b2c1-434e-b5e4-13622d6a2784",
+      "test_name": "GET /aug-gp4c-supply-instal-id-with-metering - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1808.4,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:16 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487734.4214761
+    },
+    {
+      "test_id": "9683b90a-2364-47f9-b600-7031c72e9d59",
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1787.92,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:16 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487734.8063607
+    },
+    {
+      "test_id": "01cecfac-0b54-4d40-99f3-b344796d7426",
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1817.18,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:16 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Supply Data"
+      ],
+      "timestamp": 1754487734.7927616
+    },
+    {
+      "test_id": "60fb6049-fdba-4331-b479-ace58e51ea0d",
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 2309.72,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:18 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487735.4124544
+    },
+    {
+      "test_id": "ab638d17-c02d-4144-816f-5a8b69c6c470",
+      "test_name": "GET /aug-gp4c-supply-character-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1880.86,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:18 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487736.2524252
+    },
+    {
+      "test_id": "570c36ee-1b8e-4993-ae5a-1f4c8ffa2ded",
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1845.19,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:18 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        201
+      ],
+      "tags": [
+        "Supply Data"
+      ],
+      "timestamp": 1754487736.632141
+    },
+    {
+      "test_id": "f878ea6f-708b-4836-b1ea-7aec353abc0e",
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1882.22,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:18 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "invalid",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Supply Data",
+        "validation"
+      ],
+      "timestamp": 1754487736.6550567
+    },
+    {
+      "test_id": "e48d0c28-7d16-4230-be6b-ed5f5e7df603",
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1922.02,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:20 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487737.724704
+    },
+    {
+      "test_id": "6c1e6599-fae5-4401-a6ef-18c2e7a03936",
+      "test_name": "GET /aug-gp4c-energy-prices - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1555.4,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:20 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Market Data"
+      ],
+      "timestamp": 1754487738.5436828
+    },
+    {
+      "test_id": "f92f4f98-25af-4523-8901-68e2f0e29378",
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1576.24,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:20 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487738.521712
+    },
+    {
+      "test_id": "72c0272b-5c67-4272-aef5-044cea6547a0",
+      "test_name": "POST /rfn-gp4c-supply-character-per-id-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1755.68,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:20 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Supply Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487738.2851734
+    },
+    {
+      "test_id": "6e4928ad-c9ba-4d13-ba43-f6333adc53bf",
+      "test_name": "GET /aug-gp4c-energy-prices - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1369.06,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:21 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487739.6488
+    },
+    {
+      "test_id": "03a8a8a5-1942-4c3e-9b6c-7c4846121cdc",
+      "test_name": "GET /aug-gp4c-energy-prices - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1663.52,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:22 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487740.101075
+    },
+    {
+      "test_id": "4fde33af-b429-4227-a730-4806e9ed7fc3",
+      "test_name": "GET /aug-gp4c-energy-prices - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1622.69,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:22 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487740.2573984
+    },
+    {
+      "test_id": "bff864b1-3bdc-455f-9a43-e1b2fe0fc7de",
+      "test_name": "GET /aug-gp4c-market-final-positions - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1918.64,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:22 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Market Data"
+      ],
+      "timestamp": 1754487740.2586308
+    },
+    {
+      "test_id": "1d585c97-fd70-4ec6-9ef7-31708f37e9ee",
+      "test_name": "GET /aug-gp4c-market-final-positions - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1060.96,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:22 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487741.3263254
+    },
+    {
+      "test_id": "30812457-5c58-49c6-bc9b-7e1b56ed286f",
+      "test_name": "GET /aug-gp4c-market-final-positions - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1189.04,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:23 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487741.8841405
+    },
+    {
+      "test_id": "64ed060f-a7b3-43ce-91e6-447c12bcd29c",
+      "test_name": "GET /aug-gp4c-market-final-positions - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1349.44,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:23 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487741.766273
+    },
+    {
+      "test_id": "b8b8396a-5ffb-461f-a214-4f1d7d569cc0",
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1916.05,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:24 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Market Data"
+      ],
+      "timestamp": 1754487742.2080002
+    },
+    {
+      "test_id": "63a58eb0-1874-400c-807b-c308efe08b61",
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1800.28,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:24 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487742.4673638
+    },
+    {
+      "test_id": "81cc73b2-00d9-4c6a-81e0-803a2234ec61",
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1393.65,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:24 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487743.0910969
+    },
+    {
+      "test_id": "353f91e3-a326-4da7-a818-9a096b71ddb6",
+      "test_name": "GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1497.56,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:24 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Market Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487743.121859
+    },
+    {
+      "test_id": "be670afd-0f55-4516-9b39-a3ecb677f0b6",
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Valid Test 1",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 951.34,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:25 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        200
+      ],
+      "tags": [
+        "Forecast Data"
+      ],
+      "timestamp": 1754487744.1258368
+    },
+    {
+      "test_id": "82bdc42a-cd7e-439a-9565-15f99b22aa93",
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Empty Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1363.22,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:25 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        204
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487744.2700884
+    },
+    {
+      "test_id": "f7d90574-364f-49be-aee6-00ad08ec0834",
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Large Request Body",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1163.01,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:25 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487744.486831
+    },
+    {
+      "test_id": "86f8826f-d98a-4129-b531-1a1415a5c66d",
+      "test_name": "GET /aug-gp4c-model-client-forecast-per-id - Special Characters",
+      "method": "GET",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1800.36,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:26 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487744.6213212
+    },
+    {
+      "test_id": "2965676c-2130-4209-96fa-cf52297e0ed0",
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1601.59,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:27 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        201
+      ],
+      "tags": [
+        "Forecast Data"
+      ],
+      "timestamp": 1754487745.0788982
+    },
+    {
+      "test_id": "bf4257f2-d0e6-497a-a880-b3cbb14bc142",
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1236.86,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:27 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "invalid",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Forecast Data",
+        "validation"
+      ],
+      "timestamp": 1754487745.7460759
+    },
+    {
+      "test_id": "c622ddd2-5274-4ff0-8131-4beb5c3b6858",
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1365.97,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:27 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487745.8161771
+    },
+    {
+      "test_id": "bf50ed0b-65e1-4d68-9519-bfe33ffd7416",
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1169.14,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:27 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487746.4268606
+    },
+    {
+      "test_id": "e691c37f-3f06-4faa-baad-d76de683249f",
+      "test_name": "POST /rfn-gp4c-model-client-forecast-per-id-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1991.77,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:29 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Forecast Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487746.70466
+    },
+    {
+      "test_id": "993ecea2-3679-4f41-9aa4-6568c9fba97b",
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Invalid Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1524.81,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:29 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "invalid",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Bidding Data",
+        "validation"
+      ],
+      "timestamp": 1754487747.1838434
+    },
+    {
+      "test_id": "d480b743-66a6-49bf-a465-06c97fa67cfd",
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Valid Test 1",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1754.8,
+      "success": false,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:29 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "valid",
+      "expected_status": [
+        201
+      ],
+      "tags": [
+        "Bidding Data"
+      ],
+      "timestamp": 1754487746.99655
+    },
+    {
+      "test_id": "ebcc9998-3bf5-4f0e-818e-ade1010ca981",
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Empty Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1985.39,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:30 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        400,
+        422
+      ],
+      "tags": [
+        "Bidding Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487747.766863
+    },
+    {
+      "test_id": "ec7089a7-1611-4dfe-bb1d-d2e7514e3e54",
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Large Request Body",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1329.51,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:30 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        413,
+        400
+      ],
+      "tags": [
+        "Bidding Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487748.7005434
+    },
+    {
+      "test_id": "a5a8d0fd-6ad1-4914-9ad3-4f0203fe26a1",
+      "test_name": "POST /rfn-gp4c-bidding-per-group-type-post - Special Characters",
+      "method": "POST",
+      "url": "https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC",
+      "status_code": 400,
+      "response_time": 1509.95,
+      "success": true,
+      "error": null,
+      "response_body": "Bad Request",
+      "response_headers": {
+        "Date": "Wed, 06 Aug 2025 13:42:30 GMT",
+        "Content-Type": "text/plain",
+        "Content-Length": "11",
+        "Connection": "keep-alive",
+        "server": "Anypoint Flex Gateway"
+      },
+      "test_type": "edge_case",
+      "expected_status": [
+        200,
+        201,
+        400
+      ],
+      "tags": [
+        "Bidding Data",
+        "edge_case"
+      ],
+      "timestamp": 1754487748.7145028
+    }
+  ],
+  "csv_data": "Test ID,Test Name,Method,URL,Status Code,Response Time (ms),Success,Error,Test Type,Tags,Timestamp\r\n9b37322a-0b4f-4187-91e8-3cc00e1a3c9c,GET /aug-gp4c-metering-per-group-type - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1414.42,True,,edge_case,\"Metering Data,edge_case\",1754487725.7464576\r\nba5653d9-bc2a-4c3b-991e-80e76ca5cb49,GET /aug-gp4c-metering-per-group-type - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1712.12,False,,edge_case,\"Metering Data,edge_case\",1754487725.7397223\r\n27e7b35b-62e6-4b16-b9ed-e3af33ee8c9d,GET /aug-gp4c-metering-per-group-type - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1785.87,False,,valid,Metering Data,1754487725.7358806\r\nf10d83a4-edca-4ee5-a03e-6371d84c01a3,GET /aug-gp4c-metering-per-group-type - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-group-type?group-id=generation client - wind&initial-timestamp=2024-09-06 00:00:00&final-timestamp=2024-09-06 00:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1817.34,True,,edge_case,\"Metering Data,edge_case\",1754487725.7510786\r\n6bc680de-7985-4de8-9af2-13264105e4bf,GET /aug-gp4c-metering-per-location-b2c - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1718.14,True,,edge_case,\"Metering Data,edge_case\",1754487727.5279436\r\n49126d1c-06db-4b12-a1cd-6bfc2aea7655,GET /aug-gp4c-metering-per-location-b2c - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,2569.38,False,,valid,Metering Data,1754487727.1906579\r\nc104cd6c-52e2-4da8-ba6e-8225ef494698,GET /aug-gp4c-metering-per-location-b2c - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,2558.09,False,,edge_case,\"Metering Data,edge_case\",1754487727.4558787\r\n5c31dfca-ba08-47fe-959e-abfdd53b44d3,GET /aug-gp4c-metering-per-location-b2c - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-location-b2c?county_code=3770&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,2671.9,True,,edge_case,\"Metering Data,edge_case\",1754487727.68155\r\n97009427-ced1-4fe7-aa0e-e3688e06d631,GET /aug-gp4c-metering-per-id - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1339.02,False,,edge_case,\"Metering Data,edge_case\",1754487729.7620094\r\naacc5d97-38bb-4216-8d49-8ca67e8915f8,GET /aug-gp4c-metering-per-id - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1772.45,False,,valid,Metering Data,1754487729.5115423\r\na69e27cc-705d-4a9e-9414-bea1eaf2793f,GET /aug-gp4c-metering-per-id - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1791.0,True,,edge_case,\"Metering Data,edge_case\",1754487730.0638616\r\ne6e820d4-0bca-49de-9192-007ff2a574a9,GET /aug-gp4c-metering-per-id - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-metering-per-id?point-id=ES0021000004936270DF0P&initial-timestamp=2022-03-16 11:40:00&final-timestamp=2022-03-16 11:40:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1891.49,True,,edge_case,\"Metering Data,edge_case\",1754487730.3769822\r\n72718d64-cfab-434e-bb5c-8ae5e504e920,GET /aug-gp4c-supply-instal-id-per-type - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1662.0,False,,edge_case,\"Supply Data,edge_case\",1754487731.4115918\r\n0f94e721-6e9a-4898-a1e1-2de17901e91d,GET /aug-gp4c-supply-instal-id-per-type - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1985.15,False,,valid,Supply Data,1754487731.1184745\r\n4dbbe998-3acd-4780-b880-111bf238c723,GET /aug-gp4c-supply-instal-id-per-type - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1484.31,True,,edge_case,\"Supply Data,edge_case\",1754487731.9936895\r\nb918c073-036f-4f80-ae65-c1ef3368e1d3,GET /aug-gp4c-supply-instal-id-per-type - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-per-type?market=Portugal&status=Active&group-id=Generation Client - Solar&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,2101.75,True,,edge_case,\"Supply Data,edge_case\",1754487732.2761602\r\n8cde2b11-3bc4-46e4-9c37-07eb431b2304,GET /aug-gp4c-supply-instal-id-with-metering - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1533.13,False,,edge_case,\"Supply Data,edge_case\",1754487733.105549\r\n42ae1046-4936-4358-a7f8-34cd8e3dfc4f,GET /aug-gp4c-supply-instal-id-with-metering - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1547.91,False,,valid,Supply Data,1754487733.0758052\r\n173fb3c4-b99a-47ca-b907-64bbbd19617d,GET /aug-gp4c-supply-instal-id-with-metering - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1722.24,True,,edge_case,\"Supply Data,edge_case\",1754487733.646089\r\n483bf3c7-b2c1-434e-b5e4-13622d6a2784,GET /aug-gp4c-supply-instal-id-with-metering - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-instal-id-with-metering?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&group_id=Consumption Client - B2B&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1808.4,True,,edge_case,\"Supply Data,edge_case\",1754487734.4214761\r\n9683b90a-2364-47f9-b600-7031c72e9d59,GET /aug-gp4c-supply-character-per-id - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1787.92,False,,edge_case,\"Supply Data,edge_case\",1754487734.8063607\r\n01cecfac-0b54-4d40-99f3-b344796d7426,GET /aug-gp4c-supply-character-per-id - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1817.18,False,,valid,Supply Data,1754487734.7927616\r\n60fb6049-fdba-4331-b479-ace58e51ea0d,GET /aug-gp4c-supply-character-per-id - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,2309.72,True,,edge_case,\"Supply Data,edge_case\",1754487735.4124544\r\nab638d17-c02d-4144-816f-5a8b69c6c470,GET /aug-gp4c-supply-character-per-id - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-supply-character-per-id?point_id=ES0021000000049691WC&sort-field=point_id&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1880.86,True,,edge_case,\"Supply Data,edge_case\",1754487736.2524252\r\n570c36ee-1b8e-4993-ae5a-1f4c8ffa2ded,POST /rfn-gp4c-supply-character-per-id-post - Valid Test 1,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1845.19,False,,valid,Supply Data,1754487736.632141\r\nf878ea6f-708b-4836-b1ea-7aec353abc0e,POST /rfn-gp4c-supply-character-per-id-post - Invalid Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1882.22,True,,invalid,\"Supply Data,validation\",1754487736.6550567\r\ne48d0c28-7d16-4230-be6b-ed5f5e7df603,POST /rfn-gp4c-supply-character-per-id-post - Empty Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1922.02,True,,edge_case,\"Supply Data,edge_case\",1754487737.724704\r\n6c1e6599-fae5-4401-a6ef-18c2e7a03936,GET /aug-gp4c-energy-prices - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1555.4,False,,valid,Market Data,1754487738.5436828\r\nf92f4f98-25af-4523-8901-68e2f0e29378,POST /rfn-gp4c-supply-character-per-id-post - Special Characters,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1576.24,True,,edge_case,\"Supply Data,edge_case\",1754487738.521712\r\n72c0272b-5c67-4272-aef5-044cea6547a0,POST /rfn-gp4c-supply-character-per-id-post - Large Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-supply-character-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1755.68,True,,edge_case,\"Supply Data,edge_case\",1754487738.2851734\r\n6e4928ad-c9ba-4d13-ba43-f6333adc53bf,GET /aug-gp4c-energy-prices - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1369.06,False,,edge_case,\"Market Data,edge_case\",1754487739.6488\r\n03a8a8a5-1942-4c3e-9b6c-7c4846121cdc,GET /aug-gp4c-energy-prices - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1663.52,True,,edge_case,\"Market Data,edge_case\",1754487740.101075\r\n4fde33af-b429-4227-a730-4806e9ed7fc3,GET /aug-gp4c-energy-prices - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-energy-prices?market=Portugal&market-type=Intraday&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1622.69,True,,edge_case,\"Market Data,edge_case\",1754487740.2573984\r\nbff864b1-3bdc-455f-9a43-e1b2fe0fc7de,GET /aug-gp4c-market-final-positions - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1918.64,False,,valid,Market Data,1754487740.2586308\r\n1d585c97-fd70-4ec6-9ef7-31708f37e9ee,GET /aug-gp4c-market-final-positions - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1060.96,False,,edge_case,\"Market Data,edge_case\",1754487741.3263254\r\n30812457-5c58-49c6-bc9b-7e1b56ed286f,GET /aug-gp4c-market-final-positions - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1189.04,True,,edge_case,\"Market Data,edge_case\",1754487741.8841405\r\n64ed060f-a7b3-43ce-91e6-447c12bcd29c,GET /aug-gp4c-market-final-positions - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-market-final-positions?unit_code=GALPWQ2&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1349.44,True,,edge_case,\"Market Data,edge_case\",1754487741.766273\r\nb8b8396a-5ffb-461f-a214-4f1d7d569cc0,GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1916.05,False,,valid,Market Data,1754487742.2080002\r\n63a58eb0-1874-400c-807b-c308efe08b61,GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1800.28,False,,edge_case,\"Market Data,edge_case\",1754487742.4673638\r\n81cc73b2-00d9-4c6a-81e0-803a2234ec61,GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1393.65,True,,edge_case,\"Market Data,edge_case\",1754487743.0910969\r\n353f91e3-a326-4da7-a818-9a096b71ddb6,GET /aug-gp4c-imbalances-and-surcharge-prices-per-market - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-imbalances-and-surcharge-prices-per-market?market=Portugal&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1497.56,True,,edge_case,\"Market Data,edge_case\",1754487743.121859\r\nbe670afd-0f55-4516-9b39-a3ecb677f0b6,GET /aug-gp4c-model-client-forecast-per-id - Valid Test 1,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,951.34,False,,valid,Forecast Data,1754487744.1258368\r\n82bdc42a-cd7e-439a-9565-15f99b22aa93,GET /aug-gp4c-model-client-forecast-per-id - Empty Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1363.22,False,,edge_case,\"Forecast Data,edge_case\",1754487744.2700884\r\nf7d90574-364f-49be-aee6-00ad08ec0834,GET /aug-gp4c-model-client-forecast-per-id - Large Request Body,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1163.01,True,,edge_case,\"Forecast Data,edge_case\",1754487744.486831\r\n86f8826f-d98a-4129-b531-1a1415a5c66d,GET /aug-gp4c-model-client-forecast-per-id - Special Characters,GET,https://datahubapi.ulysses.galp.com/gp4c/v1/aug-gp4c-model-client-forecast-per-id?point_id=ES0021000000049691WC&initial-timestamp=2024-09-16 14:00:00&final-timestamp=2024-09-16 15:00:00&sort-field=initial_timestamp&sort-order=asc&page-size=1000&cursor-key=abc123&format=json&68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1800.36,True,,edge_case,\"Forecast Data,edge_case\",1754487744.6213212\r\n2965676c-2130-4209-96fa-cf52297e0ed0,POST /rfn-gp4c-model-client-forecast-per-id-post - Valid Test 1,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1601.59,False,,valid,Forecast Data,1754487745.0788982\r\nbf4257f2-d0e6-497a-a880-b3cbb14bc142,POST /rfn-gp4c-model-client-forecast-per-id-post - Invalid Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1236.86,True,,invalid,\"Forecast Data,validation\",1754487745.7460759\r\nc622ddd2-5274-4ff0-8131-4beb5c3b6858,POST /rfn-gp4c-model-client-forecast-per-id-post - Empty Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1365.97,True,,edge_case,\"Forecast Data,edge_case\",1754487745.8161771\r\nbf50ed0b-65e1-4d68-9519-bfe33ffd7416,POST /rfn-gp4c-model-client-forecast-per-id-post - Large Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1169.14,True,,edge_case,\"Forecast Data,edge_case\",1754487746.4268606\r\ne691c37f-3f06-4faa-baad-d76de683249f,POST /rfn-gp4c-model-client-forecast-per-id-post - Special Characters,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-model-client-forecast-per-id-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1991.77,True,,edge_case,\"Forecast Data,edge_case\",1754487746.70466\r\n993ecea2-3679-4f41-9aa4-6568c9fba97b,POST /rfn-gp4c-bidding-per-group-type-post - Invalid Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1524.81,True,,invalid,\"Bidding Data,validation\",1754487747.1838434\r\nd480b743-66a6-49bf-a465-06c97fa67cfd,POST /rfn-gp4c-bidding-per-group-type-post - Valid Test 1,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1754.8,False,,valid,Bidding Data,1754487746.99655\r\nebcc9998-3bf5-4f0e-818e-ade1010ca981,POST /rfn-gp4c-bidding-per-group-type-post - Empty Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1985.39,True,,edge_case,\"Bidding Data,edge_case\",1754487747.766863\r\nec7089a7-1611-4dfe-bb1d-d2e7514e3e54,POST /rfn-gp4c-bidding-per-group-type-post - Large Request Body,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1329.51,True,,edge_case,\"Bidding Data,edge_case\",1754487748.7005434\r\na5a8d0fd-6ad1-4914-9ad3-4f0203fe26a1,POST /rfn-gp4c-bidding-per-group-type-post - Special Characters,POST,https://datahubapi.ulysses.galp.com/gp4c/v1/rfn-gp4c-bidding-per-group-type-post?68f73480291946428ec301e7f431e812=ED590E9D6c07468392D634434f4dD8EC,400,1509.95,True,,edge_case,\"Bidding Data,edge_case\",1754487748.7145028\r\n"
+}

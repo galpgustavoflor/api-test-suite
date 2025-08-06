@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Setup Virtual Environment",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"if (!(Test-Path .venv)) { Write-Host 'Creating virtual environment...'; python -m venv .venv } else { Write-Host 'Virtual environment already exists.' }; Write-Host 'Activating virtual environment...'; .venv\\Scripts\\Activate.ps1; Write-Host 'Upgrading pip...'; pip install --upgrade pip; Write-Host 'Installing requirements...'; pip install -r requirements.txt; Write-Host 'Setup complete!'"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Run API Testing Suite",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				".venv\\Scripts\\Activate.ps1; streamlit run app.py"
+			],
+			"group": "build",
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": [],
+			"dependsOn": "Setup Virtual Environment"
+		},
+		{
+			"label": "Setup and Run API Testing Suite",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"if (!(Test-Path .venv)) { Write-Host 'Creating virtual environment...'; python -m venv .venv } else { Write-Host 'Virtual environment already exists.' }; Write-Host 'Activating virtual environment...'; .venv\\Scripts\\Activate.ps1; Write-Host 'Upgrading pip...'; pip install --upgrade pip; Write-Host 'Installing requirements...'; pip install -r requirements.txt; Write-Host 'Starting Streamlit application...'; streamlit run app.py"
+			],
+			"group": "build",
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		}
+	]
+}

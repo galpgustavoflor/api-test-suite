@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: Simple Auth Test API
+  version: 1.0.0
+  description: Simple API to test authentication features
+
+servers:
+  - url: https://httpbin.org
+    description: HTTPBin test server
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+      description: API key authentication
+    
+    bearer_token:
+      type: http
+      scheme: bearer
+      description: Bearer token authentication
+
+paths:
+  /headers:
+    get:
+      summary: Echo headers
+      description: Returns the headers sent in the request
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /bearer:
+    get:
+      summary: Test bearer auth
+      description: Returns request info including authorization header
+      security:
+        - bearer_token: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /basic-auth/{user}/{passwd}:
+    get:
+      summary: Test basic auth
+      description: HTTPBin basic auth endpoint
+      parameters:
+        - name: user
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: passwd
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Authenticated successfully
+        '401':
+          description: Unauthorized
+
+  /status/200:
+    get:
+      summary: Always returns 200
+      description: Public endpoint that always returns 200
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
