@@ -10,7 +10,6 @@ from typing import Dict, List, Any
 
 class ResultsAnalyzer:
     
-    def _analyze_status_codes(self) -> Dict[int, int]:bjects as go
 from typing import Dict, Any, List, Optional
 import json
 from collections import Counter, defaultdict
