@@ -80,9 +80,8 @@ def main():
     print("-" * 50)
     
     try:
-        # Use the virtual environment's streamlit
-        streamlit_exe = venv_path / "Scripts" / "streamlit.exe" if platform.system() == "Windows" else venv_path / "bin" / "streamlit"
-        subprocess.run([str(streamlit_exe), "run", "app.py"], check=True)
+        # Use the virtual environment's Python to run Streamlit as a module
+        subprocess.run([str(python_exe), "-m", "streamlit", "run", "app.py"], check=True)
     except KeyboardInterrupt:
         print("\n🛑 Application stopped by user")
     except subprocess.CalledProcessError as e:
