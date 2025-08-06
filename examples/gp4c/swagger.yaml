@@ -1,0 +1,2642 @@
+openapi: 3.0.1
+info:
+  title: GP4C API
+  description: "The GP4C API is designed to empower the GP4C Platform by enabling the retrieval and submission of client contracts, characteristics, and metering data for energy consumption and generation, alongside critical market insights such as pricing, imbalances, and final positions. It achieves this through a series of well-structured endpoints that aggregate and integrate data from diverse sources, including ARPU, SAPISU, B2BSGP, PMS, REE, REN, STMSES, STMSPT, Nemon, OMIE, and more, ensuring comprehensive support for energy management and forecasting needs."
+  contact:
+    name: DATA team
+    email: DL_DATA_Team@galp.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: https://datahubapi.ulysses.galp.com/gp4c/v1
+    description: Production server
+  - url: https://datahubapi-pre.ulysses.galp.com/gp4c/v1
+    description: Pre-production server
+
+paths:
+  /aug-gp4c-metering-per-group-type:
+    get:
+      tags:
+        - Metering Data
+      summary: Retrieve metering data by group type
+      description: "Fetches 15-minute resolution metering data per group type (e.g., generation client - wind, solar; consumption client - B2B, B2C) for energy consumption and generation. Data is sourced from PMS, REE, Smart Meters, ARPU, SAP ISU, and REN."
+      operationId: getAugMeteringPerGroupType
+      parameters:
+        - name: group-id
+          in: query
+          description: Filter by client group type (e.g., generation client - wind).
+          required: false
+          schema:
+            type: string
+            enum:
+              - "generation client - wind"
+              - "generation client - solar"
+              - "consumption client - B2B"
+              - "consumption client - B2C"
+          example: "generation client - wind"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-06 00:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-06 00:00:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved metering data
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugMeteringPerGroupTypePayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-metering-per-location-b2c:
+    get:
+      tags:
+        - Metering Data
+      summary: Retrieve aggregated metering data by location for B2C clients
+      description: "Fetches 15-minute resolution aggregated metering data per location for B2C clients. Data is sourced from REN and other systems, designed for the Power Predictive Models project."
+      operationId: getAugMeteringPerLocationB2c
+      parameters:
+        - name: county_code
+          in: query
+          description: Filter by first four digits of the postal code.
+          required: false
+          schema:
+            type: string
+          example: "3770"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2022-03-16 11:40:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2022-03-16 11:40:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved aggregated metering data
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugMeteringPerLocationB2cPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-metering-per-id:
+    get:
+      tags:
+        - Metering Data
+      summary: Retrieve metering data for a specific ID
+      description: "Fetches 15-minute resolution metering data for a specific ID within a time range for generation and B2B clients. Data is sourced from PMS and designed for the Power Predictive Models project."
+      operationId: getAugMeteringPerId
+      parameters:
+        - name: point-id
+          in: query
+          description: Unique identifier of the installation/consumption point.
+          required: false
+          schema:
+            type: string
+          example: "ES0021000004936270DF0P"
+        - name: initial-timestamp
+                      
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2022-03-16 11:40:00"
+        - name: final-timestamp
+                        
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2022-03-16 11:40:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved metering data for ID
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugMeteringPerIdPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-supply-instal-id-per-type:
+    get:
+      tags:
+        - Supply Data
+      summary: Retrieve supply point/installation IDs by market and group type
+      description: "Fetches supply point/installation IDs per market (Portugal or Spain) and group type (Consumption vs Generation). Data is sourced from REN and designed for the Power Predictive Models project."
+      operationId: getAugSupplyInstalIdPerType
+      parameters:
+        - name: market
+          in: query
+          description: Filter by market (Portugal or Spain).
+          required: false
+          schema:
+            type: string
+            enum:
+              - Portugal
+              - Spain
+          example: "Portugal"
+        - name: status
+          in: query
+          description: Filter by client status (Active or Inactive).
+          required: false
+          schema:
+            type: string
+            enum:
+              - Active
+              - Inactive
+          example: "Active"
+        - name: group-id
+          in: query
+          description: Filter by client group type.
+          required: false
+          schema:
+            type: string
+          example: "Generation Client - Solar"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "point_id"
+          example: "point_id"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved supply IDs
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugSupplyInstalIdPerTypePayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-supply-instal-id-with-metering:
+    get:
+      tags:
+        - Supply Data
+      summary: Retrieve supply point/installation IDs with metering data
+      description: "Fetches distinct supply point/installation IDs with associated metering data. Data is sourced from REE, REN, SAPISU, Smart Meters, and B2B Platform, designed for the Power Predictive Models project."
+      operationId: getAugSupplyInstalIdWithMetering
+      parameters:
+        - name: market
+          in: query
+          description: Filter by market (Portugal or Spain).
+          required: false
+          schema:
+            type: string
+            enum:
+              - Portugal
+              - Spain
+          example: "Portugal"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 14:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 15:00:00"
+        - name: group_id
+          in: query
+          description: Filter by client group type.
+          required: false
+          schema:
+            type: string
+          example: "Consumption Client - B2B"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved supply IDs with metering
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugSupplyInstalIdWithMeteringPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-supply-character-per-id:
+    get:
+      tags:
+        - Supply Data
+      summary: Retrieve supply characteristics for a specific ID
+      description: "Fetches detailed characteristics of supply points per ID. Data is sourced from REE, REN, SAPISU, Renewables, Smart Meters, and B2B Platform, designed for the Power Predictive Models project."
+      operationId: getAugSupplyCharacterPerId
+      parameters:
+        - name: point_id
+          in: query
+          description: Unique identifier of the installation/consumption point.
+          required: false
+          schema:
+            type: string
+          example: "ES0021000000049691WC"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "point_id"
+          example: "point_id"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved supply characteristics
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugSupplyCharacterPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /rfn-gp4c-supply-character-per-id-post:
+    post:
+      tags:
+        - Supply Data
+      summary: Submit supply characteristics for a specific ID
+      description: "Submits the characteristics of a supply point for a specific installation/consumption point ID. Data is sourced from REE, REN, SAPISU, RENEWABLES, SMART METERS, and B2B PLATFORM, designed under the Power Predictive Models project (GP4C, Galp Power Forecasting) with data from Spain and Portugal."
+      operationId: postRfnSupplyCharacterPerId
+      requestBody:
+        description: Supply characteristics data to be submitted
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AugSupplyCharacterPostPayload'
+      responses:
+        '201':
+          description: Supply characteristics successfully submitted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Supply characteristics posted successfully"
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-energy-prices:
+    get:
+      tags:
+        - Market Data
+      summary: Retrieve energy prices by market
+      description: "This GP4C table displays the energy prices for the different markets and Market Types (intraday vs day-ahead). The table gets data from several sources such as OMIEES and OMIEPT. This table was designed under the scope of the Power Predictive Models project (G4PC, Galp Power Forecasting) and contains data from Spain and Portugal."
+      operationId: getAugEnergyPrices
+      parameters:
+        - name: market
+          in: query
+          description: Filter by market (Portugal or Spain).
+          required: false
+          schema:
+            type: string
+            enum:
+              - Portugal
+              - Spain
+          example: "Portugal"
+        - name: market-type
+          in: query
+          description: Identification of the type of market (intraday or day-ahead) in which the energy price refers to.
+          required: false
+          schema:
+            type: string
+            enum:
+              - Intraday
+              - Day-ahead
+          example: "Intraday"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range.
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 14:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range.
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 15:00:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved energy prices
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugEnergyPricesPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+  
+  /aug-gp4c-market-final-positions:
+    get:
+      tags:
+        - Market Data
+      summary: Retrieve market final positions data
+      description: "Fetches 15-minute or 1-hour resolution market final positions data per group within a time range. Data is sourced from REE Market and OMIEPT."
+      operationId: getAugMarketFinalPositions
+      parameters:
+        - name: unit_code
+          in: query
+          description: Identifier of the market bidding group.
+          required: false
+          schema:
+            type: string
+          example: "GALPWQ2"
+                           
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 14:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 15:00:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved market final positions
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugMarketFinalPositionsPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-imbalances-and-surcharge-prices-per-market:
+    get:
+      tags:
+        - Market Data
+      summary: Retrieve imbalances and surcharge prices by market
+      description: "Fetches imbalances and surcharge prices for Portugal and Spain markets. Data is sourced from REE, OMIEES, OMIEPT, and REN, designed for the Power Predictive Models project."
+      operationId: getAugImbalancesAndSurchargePricesPerMarket
+      parameters:
+        - name: market
+          in: query
+          description: Filter by market (Portugal or Spain).
+          required: false
+          schema:
+            type: string
+            enum:
+              - Portugal
+              - Spain
+          example: "Portugal"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 14:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 15:00:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved imbalances and surcharge prices
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugImbalancesAndSurchargePricesPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /aug-gp4c-model-client-forecast-per-id:
+    get:
+      tags:
+        - Forecast Data
+      summary: Retrieve model or client forecast data for a specific ID
+      description: "Fetches 15-minute or 1-hour resolution forecast data for a specific ID within a time range. Designed for the Power Predictive Models project with data from Spain and Portugal."
+      operationId: getAugModelClientForecastPerId
+      parameters:
+        - name: point_id
+          in: query
+          description: Unique identifier of the installation/consumption point.
+          required: false
+          schema:
+            type: string
+          example: "ES0021000000049691WC"
+        - name: initial-timestamp
+          in: query
+          description: Start of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 14:00:00"
+        - name: final-timestamp
+          in: query
+          description: End of the time range (yyyy-MM-dd HH:mm:ss).
+          required: false
+          schema:
+            type: string
+            format: date-time
+          example: "2024-09-16 15:00:00"
+        - name: sort-field
+          in: query
+          description: Field to sort results by.
+          required: false
+          schema:
+            type: string
+            default: "initial_timestamp"
+          example: "initial_timestamp"
+        - name: sort-order
+          in: query
+          description: Sort direction.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: "asc"
+          example: "asc"
+        - name: page-size
+          in: query
+          description: Number of items per page.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1000
+          example: 1000
+        - name: cursor-key
+          in: query
+          description: Pagination cursor for the next page, obtained from previous response metadata.
+          required: false
+          schema:
+            type: string
+          example: "abc123"
+        - name: format
+          in: query
+          description: Response format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: "json"
+          example: "json"
+      responses:
+        '200':
+          description: Successfully retrieved forecast data
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - metadata
+                  - payload
+                properties:
+                  metadata:
+                    type: object
+                    required:
+                      - schema
+                      - count
+                      - total_items
+                      - total_pages
+                    properties:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MetadataSchemaDescription'
+                      count:
+                        type: integer
+                        description: Number of items in the current response.
+                      cursor_key:
+                        type: string
+                        description: Cursor for the next page.
+                      total_items:
+                        type: integer
+                        description: Total number of items available.
+                      total_pages:
+                        type: integer
+                        description: Total number of pages available.
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AugModelClientForecastPayload'
+            text/csv:
+              schema:
+                type: string
+                description: CSV formatted response.
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                           
+                      
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /rfn-gp4c-model-client-forecast-per-id-post:
+    post:
+      tags:
+        - Forecast Data
+      summary: Submit model or client forecast data for a specific ID
+      description: "Submits 15-minute or 1-hour resolution forecast data for a specific ID within a time range. Designed for the Power Predictive Models project with data from Spain and Portugal."
+      operationId: postRfnModelClientForecastPerId
+      requestBody:
+        description: Forecast data to submit
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AugModelClientForecastPostPayload'
+      responses:
+        '201':
+          description: Forecast data successfully submitted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Data posted successfully"
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+  /rfn-gp4c-bidding-per-group-type-post:
+    post:
+      tags:
+        - Bidding Data
+      summary: Submit bid data for a group type
+      description: "Submits 1-hour resolution bid data for an ID at a given timestamp. Designed for the Power Predictive Models project with data from Spain and Portugal."
+      operationId: postAugBiddingPerGroupType
+      requestBody:
+        description: Bid data to submit
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AugBiddingPerGroupTypePostPayload'
+      responses:
+        '201':
+          description: Bid data successfully submitted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Data posted successfully"
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+      security:
+        - api_key: []
+
+components:
+  schemas:
+    MetadataSchemaDescription:
+      type: object
+      required:
+        - name
+        - type
+      properties:
+        name:
+          type: string
+          description: Name of the column.
+        description:
+          type: string
+          description: Description of the column's content.
+        type:
+          type: string
+          description: Data type of the column.
+
+    ApiErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: object
+          required:
+            - error-code
+            - error-message
+          properties:
+            error-code:
+              type: integer
+              description: Numeric error code.
+            error-message:
+              type: string
+              description: Detailed error message.
+
+    AugMeteringPerGroupTypePayload:
+      type: object
+      required:
+        - group_id
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - source
+        - ulysses_ts
+      properties:
+        group_id:
+          type: string
+          description: Identifies the client group type.
+          example: "generation client - wind"
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the metering period.
+          example: "2024-09-06 00:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the metering period.
+          example: "2024-09-06 00:00:00"
+        schedule_type:
+          type: integer
+          description: Indicates daylight saving time or winter time.
+          example: 1
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        active_energy_a_plus:
+          type: number
+          format: double
+          description: Consumed energy value.
+          example: 16.5
+        active_energy_a_plus_unit:
+          type: string
+          description: Unit of consumed energy.
+          example: "kWh"
+        active_energy_a_minus:
+          type: number
+          format: double
+          description: Produced energy value.
+          example: 11.54
+        active_energy_a_minus_unit:
+          type: string
+          description: Unit of produced energy.
+          example: "kWh"
+        resolution:
+          type: string
+          description: Resolution of the metering data.
+          example: "15 min"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "REN"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugMeteringPerLocationB2cPayload:
+      type: object
+      required:
+        - county_code
+        - cpe_quantity
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - source
+        - ulysses_ts
+      properties:
+        county_code:
+          type: string
+          description: Municipality name.
+          example: "3770"
+        cpe_quantity:
+          type: integer
+          description: Number of CPEs per location.
+          example: 7
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the metering period.
+          example: "2022-03-16 11:40:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the metering period.
+          example: "2022-03-16 11:40:00"
+        schedule_type:
+          type: integer
+          description: Indicates daylight saving time or winter time.
+          example: 1
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        active_energy_a_plus:
+          type: number
+          format: double
+          description: Consumed energy value.
+          example: 7.458
+        active_energy_a_plus_unit:
+          type: string
+          description: Unit of consumed energy.
+          example: "kWh"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "REN"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugSupplyInstalIdPerTypePayload:
+      type: object
+      required:
+        - point_id
+        - group_id
+        - market
+        - status
+        - source
+        - ulysses_ts
+      properties:
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "PT0002990111919678DE"
+        group_id:
+          type: string
+          description: Client group type.
+          example: "Generation Client - Solar"
+        market:
+          type: string
+          description: Market where the client operates.
+          example: "Portugal"
+        status:
+          type: string
+          description: Client status.
+          example: "Active"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "REN"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugMeteringPerIdPayload:
+      type: object
+      required:
+        - point_id
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - source
+        - ulysses_ts
+      properties:
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000004936270DF0P"
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the metering period.
+          example: "2022-03-16 11:40:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the metering period.
+          example: "2022-03-16 11:40:00"
+        schedule_type:
+          type: string
+          description: Indicates daylight saving time or winter time.
+          example: "1"
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        active_energy_a_plus:
+          type: number
+          format: double
+          description: Consumed energy value.
+          example: 7.458
+        active_energy_a_plus_unit:
+          type: string
+          description: Unit of consumed energy.
+          example: "kWh"
+        active_energy_a_minus:
+          type: number
+          format: double
+          description: Produced energy value.
+          example: 11.572
+        active_energy_a_minus_unit:
+          type: string
+          description: Unit of produced energy.
+          example: "kWh"
+        resolution:
+          type: string
+          description: Resolution of the metering data.
+          example: "15 min"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "PMS"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugEnergyPricesPayload:
+      type: object
+      required:
+        - market
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - period_of_day
+        - energy_price
+        - energy_price_unit
+        - source
+      properties:
+        market:
+          type: string
+          description: Market identifier (Portugal or Spain).
+          example: "Portugal"
+        market_type:
+          type: string
+          description: Identification of the type of market (intraday or day-ahead) in which the energy price refers to.
+          example: "Intraday"
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the pricing period.
+          example: "2024-09-16 14:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the pricing period.
+          example: "2024-09-16 15:00:00"
+        period_of_day:
+          type: integer
+          description: Period of day in the market session (e.g., 1 to 24 for hourly data).
+          example: 14
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        session_number:
+          type: integer
+          description: Number of the market session of the prices from the intraday market in PT and ES.
+          example: 2
+        energy_price:
+          type: number
+          format: double
+          description: Energy price for the specified period.
+          example: 45.67
+        energy_price_unit:
+          type: string
+          description: Unit of the energy price.
+          example: "E/MWh"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "OMIEPT"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion or last update.
+          example: "2024-09-16 14:30:00"
+
+    AugMarketFinalPositionsPayload:
+      type: object
+      required:
+        - source
+        - unit_code
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - period_of_day
+        - session_number
+        - market_final_value
+        - market_final_value_unit
+        - resolution
+        - available_date
+        - ulysses_ts
+      properties:
+        source:
+          type: string
+          description: Source of the data.
+          example: "OMIE PT"
+        unit_code:
+          type: string
+          description: Identifier of the market bidding group.
+          example: "GALPWQ2"
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the period.
+          example: "2024-09-16 14:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the period.
+          example: "2024-09-16 15:00:00"
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        period_of_day:
+          type: integer
+          description: Period of day in the market session.
+          example: 24
+        session_number:
+          type: integer
+          description: Number of the market session.
+          example: 2
+        market_final_value:
+          type: number
+          format: double
+          description: Final market value.
+          example: 31.3
+        market_final_value_unit:
+          type: string
+          description: Unit of the market final value.
+          example: "MWh"
+        resolution:
+          type: string
+          description: Resolution of the data.
+          example: "15 min"
+        available_date:
+          type: string
+          format: date-time
+          description: Date when data was made available.
+          example: "2024-09-16 15:00:00"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of last update.
+          example: "2024-09-16 15:00:00"
+
+    AugSupplyInstalIdWithMeteringPayload:
+      type: object
+      required:
+        - point
+        - group_id
+        - market
+        - source
+        - ulysses_ts
+      properties:
+        point:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000000049691WC"
+        group_id:
+          type: string
+          description: Client group type.
+          example: "Consumption Client - B2B"
+        market:
+          type: string
+          description: Market where the client operates.
+          example: "Portugal"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "SMART_METERS_ES"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugImbalancesAndSurchargePricesPayload:
+      type: object
+      required:
+        - market
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - period_of_day
+        - mrid
+        - source
+        - ulysses_ts
+      properties:
+        market:
+          type: string
+          description: Market identifier.
+          example: "Portugal"
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the period.
+          example: "2024-09-16 14:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the period.
+          example: "2024-09-16 15:00:00"
+        period_of_day:
+          type: integer
+          description: Period of day in the market session.
+          example: 1
+        time_zone:
+          type: string
+          description: Time zone of the data.
+          example: "UTC+1"
+        mrid:
+          type: string
+          description: Unique document identifier.
+          example: "20240717A44-3A04-AGR0117EE-0203"
+        imbalance_price_upward:
+          type: number
+          format: double
+          description: Price for upward power deviations.
+          example: 32.09
+        imbalance_price_upward_unit:
+          type: string
+          description: Unit of upward imbalance price.
+          example: "E/MWh"
+        imbalance_price_downward:
+          type: number
+          format: double
+          description: Price for downward power deviations.
+          example: 55.97
+        imbalance_price_downward_unit:
+          type: string
+          description: Unit of downward imbalance price.
+          example: "E/MWh"
+        surcharge_price_upward:
+          type: number
+          format: double
+          description: Surcharge for upward power deviations.
+          example: 24.66
+        surcharge_price_upward_unit:
+          type: string
+          description: Unit of upward surcharge price.
+          example: "E/MWh"
+        surcharge_price_downward:
+          type: number
+          format: double
+          description: Surcharge for downward power deviations.
+          example: 31.55
+        surcharge_price_downward_unit:
+          type: string
+          description: Unit of downward surcharge price.
+          example: "E/MWh"
+        source:
+          type: string
+          description: Source system of the data.
+          example: "OMIEPT"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugModelClientForecastPayload:
+      type: object
+      required:
+        - point_id
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - forecast_value
+        - forecast_value_unit
+        - resolution
+        - available_date
+        - source
+        - ulysses_ts
+      properties:
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000000049691WC"
+        model_id:
+          type: string
+          description: Unique identifier of the forecast model.
+        model_name:
+          type: string
+          description: Name of the forecast model.
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the forecast period.
+          example: "2024-09-16 14:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the forecast period.
+          example: "2024-09-16 15:00:00"
+        forecast_value:
+          type: number
+          format: double
+          description: Forecasted value.
+          example: 285.324692
+        forecast_value_unit:
+          type: string
+          description: Unit of the forecast value.
+          example: "MWh"
+        resolution:
+          type: string
+          description: Resolution of the forecast data.
+          example: "15 min"
+        available_date:
+          type: string
+          format: date-time
+          description: Date when forecast was made available.
+          example: "2024-09-16 14:00:00"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of last update.
+          example: "2024-09-16 14:00:00"
+
+    AugModelClientForecastPostPayload:
+      type: object
+      required:
+        - point_id
+        - initial_timestamp
+        - final_timestamp
+        - time_zone
+        - forecast_value
+        - forecast_value_unit
+        - resolution
+        - available_date
+        - source
+      properties:
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000000049691WC"
+        model_id:
+          type: string
+          description: Unique identifier of the forecast model.
+        model_name:
+          type: string
+          description: Name of the forecast model.
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the forecast period.
+          example: "2024-09-16 14:00:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the forecast period.
+          example: "2024-09-16 15:00:00"
+        forecast_value:
+          type: number
+          format: double
+          description: Forecasted value.
+          example: 285.324692
+        forecast_value_unit:
+          type: string
+          description: Unit of the forecast value.
+          example: "MWh"
+        resolution:
+          type: string
+          description: Resolution of the forecast data.
+          example: "15 min"
+        available_date:
+          type: string
+          format: date-time
+          description: Date when forecast was made available.
+          example: "2024-09-16 14:00:00"
+
+    AugSupplyCharacterPayload:
+      type: object
+      required:
+        - point_id
+        - market
+        - group_id
+        - ulysses_ts
+      properties:
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000000049691WC"
+        company_name:
+          type: string
+          description: Name of the company that enters into a power purchase agreement with Galp.
+          example: "FUNDACION CIUDAD DE LA ENERGIA CIUDEN F.S.P."
+        company_nipc:
+          type: string
+          description: Fiscal number of the company with an electricity contract with Galp.
+          example: "G84737238"
+        installation_name:
+          type: string
+          description: Operational name given to the electricity installation/park.
+          example: "Parque Eolico de Seboido"
+        market:
+          type: string
+          description: Market where the client operates (Portuguese or Spanish).
+          example: "Portugal"
+        group_id:
+          type: string
+          description: Identification of the client group type (e.g., Consumption Client - B2B, B2C, or Generation Client).
+          example: "Consumption Client - B2B"
+        segment:
+          type: string
+          description: "Client's segment for Consumption Clients. In Portugal: MAT, AT, MT, ETE, BTN. In Spain: 2.0TD, 3.0TD, 6.0TD."
+          example: "MAT"
+        technology:
+          type: string
+          description: Type of energy produced by generation clients.
+          example: "solar"
+        status:
+          type: string
+          description: Indicates if the client is active or inactive during the period.
+          example: "active"
+        contract_start_date:
+          type: string
+          format: date
+          description: Date when the contract with the client was initiated (local time).
+          example: "2012-01-01"
+        contract_end_date:
+          type: string
+          format: date
+          description: Date when the contract with the client was terminated (local time).
+          example: "2025-05-09"
+        installation_location_latitude:
+          type: number
+          format: double
+          description: Latitude coordinates of the installation's location for mapping.
+          example: 41.065068
+        installation_location_longitude:
+          type: number
+          format: double
+          description: Longitude coordinates of the installation's location for mapping.
+          example: -8.345496
+        installation_address:
+          type: string
+          description: Address of the installation's location for mapping.
+          example: "Parque Eolico de Seboido"
+        installation_zip_code:
+          type: string
+          description: Zip code of the installation's location for mapping.
+          example: "2354-343"
+        installation_county_name:
+          type: string
+          description: Municipality name of the installation's zip code.
+          example: "Montalegre"
+        company_address:
+          type: string
+          description: Address of the company's location for mapping.
+          example: "Avenida da India, N. 8, Alcântara"
+        company_zip_code:
+          type: string
+          description: Zip code of the company's location for mapping.
+          example: "1349-065"
+        company_county_name:
+          type: string
+          description: Municipality name of the company's zip code.
+          example: "Lisboa"
+        contractualized_power:
+          type: number
+          format: double
+          description: Power value contractualized between Galp and the client.
+          example: 25.0
+        contractualized_power_unit:
+          type: string
+          description: Unit of the contractualized power value (e.g., kW, kWh, MW, MWh).
+          example: "kW"
+        installed_capacity:
+          type: number
+          format: double
+          description: Maximum value of installed capacity at the client's location.
+          example: 33
+        installed_capacity_unit:
+          type: string
+          description: Unit of the installed capacity value (e.g., kW, kWh, MW, MWh).
+          example: "MW"
+        connection_power:
+          type: number
+          format: double
+          description: Connection power (potência de ligação) of the electricity generating installation.
+          example: 25.0
+        connection_power_unit:
+          type: string
+          description: Unit of the connection power value (e.g., kW, kWh, MW, MWh).
+          example: "kW"
+        client_has_forecast:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Indicates if the client is supposed to receive forecast predictions.
+          example: "Yes"
+        source:
+          type: string
+          description: Source system where the data originates.
+          example: "SMART_METERS_ES"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugSupplyCharacterPostPayload:
+      type: object
+      required:
+        - market
+        - group_id
+        - point_id
+        - company_name
+        - company_nipc
+        - installation_name
+        - market_representative
+      properties:
+        market:
+          type: string
+          description: Market where the client operates.
+          example: "Portugal"
+        group_id:
+          type: string
+          description: Client group type.
+          example: "Consumption Client - B2B"
+        point_id:
+          type: string
+          description: Unique identifier of the installation/consumption point.
+          example: "ES0021000000049691WC"
+        auxiliary_cpe:
+          type: string
+          description: Identifier of the auxiliary consumption point.
+          example: "ES0021000000049590HE"
+        technology:
+          type: string
+          description: Type of energy produced by generation clients.
+          example: "solar"
+        company_name:
+          type: string
+          description: Name of the company.
+          example: "Empresa XYZ"
+        company_nipc:
+          type: string
+          description: Fiscal number of the company.
+          example: "505060615"
+        installation_name:
+          type: string
+          description: Name of the electricity installation/park.
+          example: "Parque Eolico de Seboido"
+        company_address:
+          type: string
+          description: Address of the company.
+          example: "Avenida da India, N. 8, Alcântara"
+        company_zip_code:
+          type: string
+          description: Zip code of the company.
+          example: "1349-065"
+        company_county_name:
+          type: string
+          description: Municipality of the company's address.
+          example: "Lisboa"
+        installation_address:
+          type: string
+          description: Address of the installation.
+          example: "Parque Eolico de Seboido"
+        installation_zip_code:
+          type: string
+          description: Zip code of the installation.
+          example: "2354-343"
+        installation_county_name:
+          type: string
+          description: Municipality of the installation's address.
+          example: "Montalegre"
+        installation_location_latitude:
+          type: number
+          format: double
+          description: Latitude of the installation location.
+          example: 41.065068
+        installation_location_longitude:
+          type: number
+          format: double
+          description: Longitude of the installation location.
+          example: -8.345496
+        main_poc_phone_number:
+          type: integer
+          description: Phone number of the main point of contact.
+          example: "00351214385487"
+        main_poc_email:
+          type: string
+          description: Email of the main point of contact.
+          example: "email@email.com"
+        unit_code:
+          type: string
+          description: Unit code assigned by REE/OMIE.
+          example: "GALPS1"
+        physical_unit_code:
+          type: string
+          description: Physical unit code assigned by REE/OMIE.
+          example: "VDECAO"
+        supply_area_code:
+          type: string
+          description: Supply area code assigned by REN.
+          example: "AGPRSUL"
+        installed_capacity:
+          type: number
+          format: double
+          description: Installed capacity value.
+          example: 33
+        installed_capacity_unit:
+          type: string
+          description: Unit of installed capacity.
+          example: "MW"
+        connection_power:
+          type: number
+          format: double
+          description: Connection power value.
+          example: 20
+        connection_power_unit:
+          type: string
+          description: Unit of connection power.
+          example: "MW"
+        contractualized_power:
+          type: number
+          format: double
+          description: Contractualized power value.
+          example: 10
+        contractualized_power_unit:
+          type: string
+          description: Unit of contractualized power.
+          example: "MW"
+        technical_minimum:
+          type: number
+          format: double
+          description: Technical minimum value.
+          example: 9
+        technical_minimum_unit:
+          type: string
+          description: Unit of technical minimum.
+          example: "MW"
+        market_representative:
+          type: string
+          description: Market representative of the company.
+          example: "PETROGAL"
+        market_representative_code:
+          type: string
+          description: Market code of the representative agent.
+          example: "GALPW"
+        market_representative_nipc:
+          type: string
+          description: Fiscal number of the market representative.
+          example: "505060515"
+        representation_start_date:
+          type: string
+          format: date-time
+          description: Start date of market representation.
+          example: "2022-01-01 20:00"
+        representation_end_date:
+          type: string
+          format: date-time
+          description: End date of market representation.
+          example: "2023-01-01 20:00"
+        contract_start_date:
+          type: string
+          format: date-time
+          description: Contract start date.
+          example: "2020-01-01 20:00"
+        contract_end_date:
+          type: string
+          format: date-time
+          description: Contract end date.
+          example: "2021-01-01 20:00"
+        client_has_forecast:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Indicates if client has forecast predictions.
+          example: "Yes"
+        market_session_md:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Access to Mercado Diário market session.
+          example: "Yes"
+        market_session_ida_1:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Access to IDA1 market session.
+          example: "No"
+        market_session_ida_2:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Access to IDA2 market session.
+          example: "No"
+        market_session_ida_3:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Access to IDA3 market session.
+          example: "No"
+        market_session_mic:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Access to MIC market session.
+          example: "No"
+        md_cut_off_hour:
+          type: string
+          pattern: ^[0-2][0-9]:[0-5][0-9]$
+          description: Cut-off hour for Mercado Diário (HH:mm).
+          example: "20:00"
+        ida_1_cut_off_hour:
+          type: string
+          pattern: ^[0-2][0-9]:[0-5][0-9]$
+          description: Cut-off hour for IDA1 (HH:mm).
+          example: "20:15"
+        ida_2_cut_off_hour:
+          type: string
+          pattern: ^[0-2][0-9]:[0-5][0-9]$
+          description: Cut-off hour for IDA2 (HH:mm).
+          example: "20:00"
+        ida_3_cut_off_hour:
+          type: string
+          pattern: ^[0-2][0-9]:[0-5][0-9]$
+          description: Cut-off hour for IDA3 (HH:mm).
+          example: "20:00"
+        mic_cut_off_hour:
+          type: string
+          pattern: ^[0-2][0-9]:[0-5][0-9]$
+          description: Cut-off hour for MIC (HH:mm).
+          example: "20:00"
+        programming_unit_code:
+          type: string
+          description: Programming unit code (Spanish market only).
+          example: "GALPAO1"
+        ministerial_code:
+          type: string
+          description: Ministerial code (Spanish market only).
+          example: "RE-112879"
+        electricity_distributor:
+          type: string
+          description: Electricity distributor (Spanish market only).
+          example: "ENDESA"
+        eic_up_code:
+          type: string
+          description: EIC code for programme unit (Spanish market only).
+          example: "18W000000000SATU"
+        eic_uf_code:
+          type: string
+          description: EIC code for physics unit (Spanish market only).
+          example: "18W000000000SACV"
+        ancillary_services:
+          type: string
+          enum:
+            - Yes
+            - No
+          description: Authorisation for ancillary services (Spanish market only).
+          example: "Yes"
+
+    AugBiddingPerGroupTypePayload:
+      type: object
+      required:
+        - bid_segment_id
+        - initial_timestamp
+        - final_timestamp
+        - bid_value
+        - unit
+        - created_date
+        - ulysses_ts
+      properties:
+        bid_segment_id:
+          type: number
+          format: double
+          description: Unique identifier of the bid.
+          example: 1.0
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the bid period.
+          example: "2024-01-02 15:30:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the bid period.
+          example: "2024-01-02 16:30:00"
+        bid_value:
+          type: number
+          format: double
+          description: Bid value for the period.
+          example: 353
+        unit:
+          type: string
+          description: Unit of the bid value.
+          example: "MWh"
+        created_date:
+          type: string
+          format: date-time
+          description: Date when the record was created.
+          example: "2024-05-01 14:00:00"
+        updated_date:
+          type: string
+          format: date-time
+          description: Date of the last update.
+          example: "2024-03-13 16:00:00"
+        updated_by_user:
+          type: string
+          description: User who last updated the record.
+          example: "silvia.beleza"
+        ulysses_ts:
+          type: string
+          format: date-time
+          description: Timestamp of record insertion.
+          example: "2024-09-03 16:21:58"
+
+    AugBiddingPerGroupTypePostPayload:
+      type: object
+      required:
+        - bid_segment_id
+        - initial_timestamp
+        - final_timestamp
+        - bid_value
+        - unit
+        - created_date
+      properties:
+        bid_segment_id:
+          type: number
+          format: double
+          description: Unique identifier of the bid.
+          example: 1.0
+        initial_timestamp:
+          type: string
+          format: date-time
+          description: Start of the bid period.
+          example: "2024-01-02 15:30:00"
+        final_timestamp:
+          type: string
+          format: date-time
+          description: End of the bid period.
+          example: "2024-01-02 16:30:00"
+        bid_value:
+          type: number
+          format: double
+          description: Bid value for the period.
+          example: 353
+        unit:
+          type: string
+          description: Unit of the bid value.
+          example: "MWh"
+        created_date:
+          type: string
+          format: date-time
+          description: Date when the record was created.
+          example: "2024-05-01 14:00:00"
+        updated_date:
+          type: string
+          format: date-time
+          description: Date of the last update.
+          example: "2024-03-13 16:00:00"
+        updated_by_user:
+          type: string
+          description: User who last updated the record.
+          example: "silvia.beleza"
+
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: <CLIENT_ID>
+      in: header
+      description: API key for authentication.
