@@ -149,12 +149,28 @@ class SwaggerParser:
         normalized = []
         
         for param in parameters:
+            # Determine schema based on OpenAPI/Swagger version
+            if self.version and str(self.version).startswith('3'):
+                # OpenAPI 3.x: use 'schema' or default to {'type': 'string'}
+                schema = param.get('schema', {'type': 'string'})
+            else:
+                # Swagger 2.0: build schema from 'type', 'format', etc.
+                schema = {}
+                if 'type' in param:
+                    schema['type'] = param['type']
+                if 'format' in param:
+                    schema['format'] = param['format']
+                if 'items' in param:
+                    schema['items'] = param['items']
+                if not schema:
+                    schema = {'type': 'string'}
+
             normalized_param = {
                 'name': param.get('name', ''),
                 'in': param.get('in', 'query'),
                 'required': param.get('required', False),
                 'description': param.get('description', ''),
-                'schema': param.get('schema', param.get('type', 'string')),
+                'schema': schema,
                 'example': param.get('example'),
                 'examples': param.get('examples', {})
             }
